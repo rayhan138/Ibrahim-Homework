@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic Adventure: Book Two</title>
+    
+    <!-- Importing Google Fonts for English text only -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #F4F4F0;
+            color: #000;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Neo-Brutalist Headings */
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            background-color: #FF90E8;
+            display: inline-block;
+            padding: 15px 30px;
+            border: 5px solid #000;
+            box-shadow: 8px 8px 0px #000;
+            margin-bottom: 40px;
+            text-align: center;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            display: inline-block;
+            border: 4px solid #000;
+            box-shadow: 6px 6px 0px #FF90E8;
+        }
+
+        /* Brutalist Cards */
+        .card {
+            background-color: #fff;
+            border: 4px solid #000;
+            box-shadow: 8px 8px 0px #000;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 0;
+        }
+
+        .card.rules-card { background-color: #FDE047; }
+        .card.bg-blue { background-color: #93C5FD; }
+        .card.bg-green { background-color: #86EFAC; }
+        .card.bg-orange { background-color: #FDBA74; }
+        .card.bg-red { background-color: #FCA5A5; } /* New Color for Section 4 */
+        .card.bg-pink { background-color: #FBCFE8; }
+        .card.bg-purple { background-color: #D8B4FE; }
+
+        /* Typography & Content */
+        .question-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center; /* This centers the text vertically with the massive emoji */
+        }
+
+        /* MASSIVE EMOJIS */
+        .big-emoji {
+            font-size: 3.5rem; /* Makes emojis huge! */
+            margin-right: 15px;
+            line-height: 1;
+        }
+
+        .rules-list li {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            margin-left: 25px;
+        }
+
+        .explanation {
+            background-color: #fff;
+            border: 3px dashed #000;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .explanation span {
+            background-color: #000;
+            color: #fff;
+            padding: 2px 8px;
+            margin-right: 5px;
+        }
+
+        /* MASSIVE, NORMAL ARABIC TEXT */
+        .arabic-text {
+            font-family: Arial, sans-serif; /* Normal standard font */
+            font-size: 3.5rem; /* MUCH BIGGER FONT */
+            font-weight: bold;
+            text-align: right;
+            direction: rtl;
+            background-color: #fff;
+            border: 4px solid #000;
+            padding: 15px 25px;
+            margin-top: 15px;
+            box-shadow: 4px 4px 0px #000;
+            color: #111;
+            line-height: 1.8;
+        }
+
+        /* Neo-Brutalist Buttons / Details Summary */
+        details {
+            margin-top: 15px;
+        }
+
+        summary {
+            background-color: #000;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 12px 24px;
+            border: 4px solid #000;
+            box-shadow: 6px 6px 0px #3B82F6;
+            cursor: pointer;
+            list-style: none;
+            display: inline-block;
+            transition: all 0.1s ease-in-out;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 2px 2px 0px #3B82F6;
+        }
+
+        summary:active {
+            transform: translate(6px, 6px);
+            box-shadow: 0px 0px 0px #3B82F6;
+        }
+
+        /* Grids for Vocab and Sorting */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .vocab-card {
+            background-color: #fff;
+            border: 4px solid #000;
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            box-shadow: 6px 6px 0px #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .vocab-card .big-emoji {
+            font-size: 5rem; /* Even larger emojis for the cards! */
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        .sort-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .sort-column {
+            flex: 1;
+            min-width: 250px;
+            border: 4px solid #000;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        .sort-column h3 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .word-tag {
+            font-family: Arial, sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            background-color: #E2E8F0;
+            border: 3px solid #000;
+            display: inline-block;
+            padding: 5px 20px;
+            margin: 8px;
+            box-shadow: 3px 3px 0px #000;
+        }
+
+        .word-bank {
+            font-family: Arial, sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            background-color: #fff;
+            border: 4px solid #000;
+            padding: 20px;
+            text-align: center;
+            direction: rtl;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📚 Arabic Adventure With Ibrahim</h1>
+
+    <!-- RULES SECTION -->
+    <div class="card rules-card">
+        <h2 style="margin-top: 0;">⚠️ Important Rules</h2>
+        <ul class="rules-list">
+            <li><strong>Gender (Page 2):</strong> Words ending in a taa marbuta (ة) are feminine. Words without it are masculine.</li>
+            <li><strong>"This is..." (Page 5):</strong> Use هَذَا for masculine nouns and هَذِهِ for feminine nouns.</li>
+            <li><strong>Adjectives (Page 7):</strong> Adjectives must come after the noun. If the noun is feminine (ends in ة), the adjective must also be feminine (add ة).</li>
+            <li><strong>"And" (Page 8):</strong> The word for "and" is وَ.</li>
+            <li><strong>Questions (Pages 9 & 14):</strong> هَلْ means "Is this...?", نَعَمْ means "Yes", لَا means "No", and أَمْ means "or".</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 1: TRANSLATIONS -->
+    <h2>1️⃣ Translations</h2>
+    
+    <div class="card bg-blue">
+        <div class="question-text"><span class="big-emoji">🐱</span> This is a small cat</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذِهِ قِطَّةٌ صَغِيرَةٌ</div>
+            <div class="explanation"><span>WHY</span> Cat is قِطَّةٌ (page 11). It ends in ة so it is feminine. We use هَذِهِ (This is - fem). The adjective small is صَغِيرَةٌ (page 7) and comes after the noun.</div>
+        </details>
+    </div>
+
+    <div class="card bg-blue">
+        <div class="question-text"><span class="big-emoji">🦋</span> This is a light butterfly</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذِهِ فَرَاشَةٌ خَفِيفَةٌ</div>
+            <div class="explanation"><span>WHY</span> Butterfly is فَرَاشَةٌ (page 11). Feminine noun + هَذِهِ + feminine adjective for light خَفِيفَةٌ (page 7).</div>
+        </details>
+    </div>
+
+    <div class="card bg-blue">
+        <div class="question-text"><span class="big-emoji">⭐</span> This is a new star</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذِهِ نَجْمَةٌ جَدِيدَةٌ</div>
+            <div class="explanation"><span>WHY</span> Star is نَجْمَةٌ (page 13). Feminine noun + هَذِهِ + feminine adjective for new جَدِيدَةٌ (page 7).</div>
+        </details>
+    </div>
+
+    <div class="card bg-blue">
+        <div class="question-text"><span class="big-emoji">❤️</span> This is a small heart</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذَا قَلْبٌ صَغِيرٌ</div>
+            <div class="explanation"><span>WHY</span> Heart is قَلْبٌ (page 13). It does not end in ة, so it is masculine. We use هَذَا (This is - masc) + the masculine adjective for small صَغِيرٌ (page 7).</div>
+        </details>
+    </div>
+
+    <!-- SECTION 2: ANSWERING & TRANSLATING -->
+    <h2>2️⃣ Answering & Translating</h2>
+
+    <div class="card bg-green">
+        <div class="question-text"><span class="big-emoji">🖊️</span> Is this a long pen? (هَلْ هَذَا قَلَمٌ طَوِيلٌ ؟)</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">نَعَمْ</div>
+        </details>
+    </div>
+
+    <div class="card bg-green">
+        <div class="question-text"><span class="big-emoji">🏠</span> Is this a large House? (هَلْ هَذَا بَيْتٌ كَبِيرٌ؟)</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">لَا</div>
+            <div class="explanation"><span>WHY</span> Look closely at the picture! It perfectly matches the picture of the "small house" (بَيْتٌ صَغِيرٌ) on page 7 of your book. Therefore, it is not large.</div>
+        </details>
+    </div>
+
+    <div class="card bg-green">
+        <div class="question-text"><span class="big-emoji">👜</span> Is this a light bag? (هَلْ هَذِهِ حَقِيبَةٌ خَفِيفَةٌ ؟)</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">نَعَمْ</div>
+            <div class="explanation"><span>WHY</span> On page 10, exercise 9 shows this exact picture for a light bag.</div>
+        </details>
+    </div>
+
+    <div class="card bg-green">
+        <div class="question-text"><span class="big-emoji">🏚️</span> This is an old house and this is a new house</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذَا بَيْتٌ قَدِيمٌ وَهَذَا بَيْتٌ جَدِيدٌ</div>
+            <div class="explanation"><span>WHY</span> House (بَيْتٌ) is masculine (page 4). Old is قَدِيمٌ and new is جَدِيدٌ (page 7). We connect them with وَ (and).</div>
+        </details>
+    </div>
+
+    <div class="card bg-green">
+        <div class="question-text"><span class="big-emoji">✏️</span> This is a small pencil and this is a big pencil</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذَا قَلَمٌ صَغِيرٌ وَهَذَا قَلَمٌ كَبِيرٌ</div>
+            <div class="explanation"><span>WHY</span> Pen/Pencil is قَلَمٌ (masculine, page 3). Small is صَغِيرٌ and big is كَبِيرٌ.</div>
+        </details>
+    </div>
+
+    <!-- SECTION 3: SHAPES & OR QUESTIONS -->
+    <h2>3️⃣ Shapes & "Or" Questions</h2>
+
+    <div class="card bg-orange">
+        <div class="question-text"><span class="big-emoji">🔺</span> Is this a triangle or heart? (هَلْ هَذَا مُثَلَّثٌ أَمْ قَلْبٌ؟)</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذَا مُثَلَّثٌ</div>
+            <div class="explanation"><span>WHY</span> Vocab is from page 13. أَمْ means "or" (page 14). The picture is a triangle.</div>
+        </details>
+    </div>
+
+    <div class="card bg-orange">
+        <div class="question-text"><span class="big-emoji">⭕</span> Is this a star or circle? (هَلْ هَذِهِ نَجْمَةٌ أَمْ دَائِرَةٌ؟)</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذِهِ دَائِرَةٌ</div>
+        </details>
+    </div>
+
+    <!-- SECTION 4: NEW ISOLATED TRANSLATE SENTENCE -->
+    <h2>4️⃣ Translate the following sentences into Arabic</h2>
+
+    <div class="card bg-red">
+        <div class="question-text"><span class="big-emoji">🐶</span> This is a small dog and this is a big dog</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذَا كَلْبٌ صَغِيرٌ وَهَذَا كَلْبٌ كَبِيرٌ</div>
+            <div class="explanation"><span>WHY</span> Dog (كَلْبٌ) is masculine (page 11). Small is صَغِيرٌ and big is كَبِيرٌ. We connect them with وَ (and).</div>
+        </details>
+    </div>
+
+    <!-- SECTION 5: VOCABULARY MATCHING -->
+    <h2>5️⃣ Vocabulary Matching</h2>
+    <div class="card bg-pink">
+        <p class="question-text" style="font-size: 1.4rem;">What is the Arabic word for these items? (Page 3)</p>
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <span class="big-emoji">📖</span> Book
+                <details><summary>Reveal</summary><div class="arabic-text" style="font-size: 2.8rem;">كِتَابٌ</div></details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">✂️</span> Scissors
+                <details><summary>Reveal</summary><div class="arabic-text" style="font-size: 2.8rem;">مِقَصٌّ</div></details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🪑</span> Chair
+                <details><summary>Reveal</summary><div class="arabic-text" style="font-size: 2.8rem;">كُرْسِيٌّ</div></details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🖊️</span> Pen / Pencil
+                <details><summary>Reveal</summary><div class="arabic-text" style="font-size: 2.8rem;">قَلَمٌ</div></details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🗄️</span> Desk
+                <details><summary>Reveal</summary><div class="arabic-text" style="font-size: 2.8rem;">مَكْتَبٌ</div></details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">📦</span> Box
+                <details><summary>Reveal</summary><div class="arabic-text" style="font-size: 2.8rem;">صُنْدُوقٌ</div></details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">💻</span> Computer
+                <details><summary>Reveal</summary><div class="arabic-text" style="font-size: 2.8rem;">حَاسُوبٌ</div></details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">📓</span> Notebook
+                <details><summary>Reveal</summary><div class="arabic-text" style="font-size: 2.8rem;">دَفْتَرٌ</div></details>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 6: TRANSLATE TO ARABIC (VOCAB) -->
+    <h2>6️⃣ Translate to Arabic (Vocab)</h2>
+    
+    <div class="card bg-purple">
+        <div class="question-text"><span class="big-emoji">🏠</span> This is a house</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذَا بَيْتٌ</div>
+            <div class="explanation"><span>WHY</span> بَيْتٌ (house) does not end in 'ة', so it is masculine. We use هَذَا.</div>
+        </details>
+    </div>
+
+    <div class="card bg-purple">
+        <div class="question-text">
+            <svg width="80" height="80" viewBox="0 0 100 100" style="margin-right: 15px;">
+                <!-- Table top (3D perspective) -->
+                <ellipse cx="50" cy="30" rx="40" ry="8" fill="#8B4513" stroke="#000" stroke-width="2"/>
+                <rect x="10" y="30" width="80" height="5" fill="#A0522D" stroke="#000" stroke-width="2"/>
+                
+                <!-- Table legs -->
+                <rect x="15" y="35" width="6" height="50" fill="#654321" stroke="#000" stroke-width="2"/>
+                <rect x="79" y="35" width="6" height="50" fill="#654321" stroke="#000" stroke-width="2"/>
+                <rect x="35" y="35" width="6" height="50" fill="#8B4513" stroke="#000" stroke-width="2"/>
+                <rect x="59" y="35" width="6" height="50" fill="#8B4513" stroke="#000" stroke-width="2"/>
+                
+                <!-- Leg bottoms -->
+                <ellipse cx="18" cy="85" rx="4" ry="2" fill="#4A2511"/>
+                <ellipse cx="82" cy="85" rx="4" ry="2" fill="#4A2511"/>
+                <ellipse cx="38" cy="85" rx="4" ry="2" fill="#5A3521"/>
+                <ellipse cx="62" cy="85" rx="4" ry="2" fill="#5A3521"/>
+            </svg>
+            This is a table
+        </div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذِهِ طَاوِلَةٌ</div>
+            <div class="explanation"><span>WHY</span> طَاوِلَةٌ (table) ends in 'ة', so it is feminine. We use هَذِهِ.</div>
+        </details>
+    </div>
+
+    <div class="card bg-purple">
+        <div class="question-text"><span class="big-emoji">⌚</span> This is a watch</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذِهِ سَاعَةٌ</div>
+            <div class="explanation"><span>WHY</span> سَاعَةٌ (watch) ends in 'ة', so it is feminine. We use هَذِهِ.</div>
+        </details>
+    </div>
+
+    <div class="card bg-purple">
+        <div class="question-text"><span class="big-emoji">🛏️</span> This is a bed</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذَا سَرِيرٌ</div>
+            <div class="explanation"><span>WHY</span> سَرِيرٌ (bed) does not end in 'ة', so it is masculine. We use هَذَا.</div>
+        </details>
+    </div>
+
+    <div class="card bg-purple">
+        <div class="question-text"><span class="big-emoji">📏</span> This is a ruler</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذِهِ مِسْطَرَةٌ</div>
+            <div class="explanation"><span>WHY</span> مِسْطَرَةٌ (ruler) ends in 'ة', so it is feminine. We use هَذِهِ.</div>
+        </details>
+    </div>
+
+    <div class="card bg-purple">
+        <div class="question-text"><span class="big-emoji">🚪</span> This is a door</div>
+        <details>
+            <summary>Reveal Answer</summary>
+            <div class="arabic-text">هَذَا بَابٌ</div>
+            <div class="explanation"><span>WHY</span> بَابٌ (door) does not end in 'ة', so it is masculine. We use هَذَا.</div>
+        </details>
+    </div>
+
+    <!-- SECTION 7: MASCULINE VS FEMININE -->
+    <h2>7️⃣ Sorting: Masculine vs Feminine</h2>
+    <div class="card" style="background-color: #E2E8F0;">
+        <p class="question-text" style="font-size: 1.4rem;">Apply the golden rule: Feminine words end in taa marbuta (ة). Sort the following words:</p>
+        
+        <div class="word-bank">
+            بَابٌ - بَيْتٌ - خِزَانَةٌ - غَسَّالَةٌ - قُفْلٌ - مِذْيَاعٌ - شَمْعَةٌ - هَاتِفٌ
+        </div>
+
+        <details>
+            <summary style="background-color: #000; box-shadow: 6px 6px 0px #F97316;">Click to Check Sorting Results!</summary>
+            
+            <div class="sort-container">
+                <div class="sort-column" style="background-color: #FBCFE8;">
+                    <h3>👧 Feminine (Ends in ة)</h3>
+                    <span class="word-tag">خِزَانَةٌ</span>
+                    <span class="word-tag">غَسَّالَةٌ</span>
+                    <span class="word-tag">شَمْعَةٌ</span>
+                </div>
+                
+                <div class="sort-column" style="background-color: #93C5FD;">
+                    <h3>👦 Masculine (No ة)</h3>
+                    <span class="word-tag">بَابٌ</span>
+                    <span class="word-tag">بَيْتٌ</span>
+                    <span class="word-tag">قُفْلٌ</span>
+                    <span class="word-tag">مِذْيَاعٌ</span>
+                    <span class="word-tag">هَاتِفٌ</span>
+                    
+                    <div class="explanation" style="margin-top: 20px;">
+                        <span>NOTE</span> The word بَيْتٌ (house) ends in a regular 'taa' (ت), NOT a 'taa marbuta' (ة), so it's masculine!
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+</div>
+
+</body>
+</html>
