@@ -74,6 +74,9 @@
         .card.bg-red { background-color: #FCA5A5; } /* New Color for Section 4 */
         .card.bg-pink { background-color: #FBCFE8; }
         .card.bg-purple { background-color: #D8B4FE; }
+        .card.bg-teal { background-color: #5EEAD4; }
+        .card.bg-yellow { background-color: #FDE047; }
+        .card.bg-lime { background-color: #BEF264; }
 
         /* Typography & Content */
         .question-text {
@@ -128,6 +131,19 @@
             box-shadow: 4px 4px 0px #000;
             color: #111;
             line-height: 1.8;
+        }
+
+        /* Letter connecting specific style */
+        .equation {
+            font-family: Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: bold;
+            direction: rtl;
+            background-color: #fff;
+            border: 4px dashed #000;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         /* Neo-Brutalist Buttons / Details Summary */
@@ -238,6 +254,69 @@
             direction: rtl;
             line-height: 1.8;
             margin-bottom: 20px;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+            border-bottom: 2px dashed #ccc;
+            padding-bottom: 15px;
+        }
+
+        .flex-row:last-child {
+            border-bottom: none;
+        }
+
+        .vocab-label {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .worksheet-header {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            border-bottom: 3px dashed #000;
+            padding-bottom: 5px;
+        }
+
+        /* Styles for "Copy Twice" section */
+        .copy-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            border: 4px solid #000;
+            padding: 15px 25px;
+            margin-bottom: 20px;
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        .copy-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .copy-boxes {
+            display: flex;
+            gap: 20px;
+        }
+
+        .write-box {
+            width: 150px;
+            height: 70px;
+            border: 3px dashed #888;
+            background-color: #fafafa;
         }
 
         /* RESPONSIVE DESIGN - TABLET */
@@ -716,6 +795,520 @@
                 </div>
             </div>
         </details>
+    </div>
+
+    <!-- SECTION 8: CONNECT THE LETTERS (PAGE 1) -->
+    <h2>8️⃣ Connect the Letters</h2>
+    <div class="card bg-teal">
+        <p class="question-text">Connect the following letters to make a word!</p>
+        <div class="equation">ك + ق + ك</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">كقك</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">ف + ك + ع</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">فكع</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">م + ك + ه</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">مكه</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">ك + م + ل</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">كمل</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">ل + ه + ك</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">لهك</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">ن + ل + ث</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">نلث</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">ى + ه + ح</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">يهح</div>
+        </details>
+    </div>
+
+    <!-- SECTION 9: ENGLISH TO ARABIC TRANSLATION -->
+    <h2>9️⃣ Translate: English to Arabic</h2>
+
+    <div class="card bg-yellow">
+        <p class="question-text">Translate the following words. Pay attention to the gender!</p>
+        
+        <div class="sort-container">
+            <!-- Feminine Column -->
+            <div class="sort-column" style="background-color: #FBCFE8;">
+                <h3 style="color: #BE185D;">👧 Feminine</h3>
+                
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <span class="big-emoji" style="font-size: 2rem;">⬛</span> Blackboard
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">سَبُّورَةٌ</div>
+                    </details>
+                </div>
+
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <img src="icons/table.png" alt="Table" style="width: 60px; height: 60px; margin-right: 15px; vertical-align: middle;">
+                        Table
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">طَاوِلَةٌ</div>
+                    </details>
+                </div>
+
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <img src="icons/Stapler.png" alt="Stapler" style="width: 60px; height: 60px; margin-right: 15px; vertical-align: middle;">
+                        Stapler
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">دَبَّاسَةٌ</div>
+                    </details>
+                </div>
+
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <img src="icons/Pencil Sharpener.png" alt="Pencil Sharpener" style="width: 60px; height: 60px; margin-right: 15px; vertical-align: middle;">
+                        Pencil Sharpener
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">بَرَّايَةٌ</div>
+                    </details>
+                </div>
+
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <span class="big-emoji" style="font-size: 2rem;">🧼</span> Eraser
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">مِمْحَاةٌ</div>
+                    </details>
+                </div>
+
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <span class="big-emoji" style="font-size: 2rem;">📏</span> Ruler</div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">مِسْطَرَةٌ</div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Masculine Column -->
+            <div class="sort-column" style="background-color: #93C5FD;">
+                <h3 style="color: #1D4ED8;">👦 Masculine</h3>
+                
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <span class="big-emoji" style="font-size: 2rem;">📖</span> Book
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">كِتَابٌ</div>
+                    </details>
+                </div>
+
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <span class="big-emoji" style="font-size: 2rem;">📓</span> Exercise Book
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">دَفْتَرٌ</div>
+                    </details>
+                </div>
+
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <span class="big-emoji" style="font-size: 2rem;">🖊️</span> Pen
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">قَلَمٌ</div>
+                    </details>
+                </div>
+
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <span class="big-emoji" style="font-size: 2rem;">🗄️</span> Desk
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">مَكْتَبٌ</div>
+                    </details>
+                </div>
+
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <span class="big-emoji" style="font-size: 2rem;">🪑</span> Chair
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">كُرْسِيٌّ</div>
+                    </details>
+                </div>
+
+                <div class="flex-row">
+                    <div class="vocab-label">
+                        <span class="big-emoji" style="font-size: 2rem;">📦</span> Box
+                    </div>
+                    <details>
+                        <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
+                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">صُنْدُوقٌ</div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 10: CONNECT THE LETTERS (PAGE 2) -->
+    <h2>🔟 Connect the Letters</h2>
+    <div class="card bg-lime">
+        <p class="question-text">Connect the following letters to make a word!</p>
+        <div class="equation">ه + ن + ه</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">هنه</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">ن + ه + م</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">نهم</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">و + و + ن</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">وون</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">ي + و + م</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">يوم</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">ه + ي + ي</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">هيي</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">م + ه + ي</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">مهي</div>
+        </details>
+        <div class="equation" style="margin-top: 30px;">ن + و + م</div>
+        <details style="text-align: center;">
+            <summary>Reveal Word</summary>
+            <div class="arabic-text" style="text-align: center;">نوم</div>
+        </details>
+    </div>
+
+    <!-- SECTION 11: READ AND COPY (PART 1) -->
+    <h2>1️⃣1️⃣ Read and Copy</h2>
+    <div class="card bg-blue">
+        <div class="worksheet-header">2nd Grade Arabic Homework</div>
+        <p class="question-text">Read and copy the following words</p>
+        <div class="vocab-grid">
+            <!-- Left Column -->
+            <div class="vocab-card">
+                <span class="big-emoji">📓</span> Notebook
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">دَفْتَرٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🗄️</span> Desk
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">مَكْتَبٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">📦</span> Box
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">صُنْدُوقٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">💻</span> Computer
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">حَاسُوبٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <img src="icons/table.png" alt="Table" style="width: 80px; height: 80px; margin-bottom: 10px;">
+                Table
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">طَاوِلَةٌ</div>
+                </details>
+            </div>
+            <!-- Right Column -->
+            <div class="vocab-card">
+                <span class="big-emoji">📖</span> Book
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">كِتَابٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🖊️</span> Pen / Pencil
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">قَلَمٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🪑</span> Chair
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">كُرْسِيٌّ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">✂️</span> Scissors
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">مِقَصٌّ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">⬛</span> Blackboard
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">سَبُّورَةٌ</div>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 12: READ AND COPY (PART 2) -->
+    <h2>1️⃣2️⃣ Read and Copy (Continued)</h2>
+    <div class="card bg-pink">
+        <p class="question-text">Read and copy the following words (Continued)</p>
+        <div class="vocab-grid">
+            <!-- Left Column -->
+            <div class="vocab-card">
+                <img src="icons/Pencil Sharpener.png" alt="Pencil Sharpener" style="width: 80px; height: 80px; margin-bottom: 10px;">
+                Pencil Sharpener
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">بَرَّايَةٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">📏</span> Ruler
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">مِسْطَرَةٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">⚽</span> Ball
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">كُرَةٌ</div>
+                </details>
+            </div>
+            <!-- Right Column -->
+            <div class="vocab-card">
+                <img src="icons/Stapler.png" alt="Stapler" style="width: 80px; height: 80px; margin-bottom: 10px;">
+                Stapler
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">دَبَّاسَةٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🧼</span> Eraser
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">مِمْحَاةٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🎒</span> Bag / Backpack
+                <details>
+                    <summary>Reveal</summary>
+                    <div class="arabic-text">حَقِيبَةٌ</div>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 13: COPY TWICE (WELLSPRING) -->
+    <h2>1️⃣3️⃣ Copy Twice</h2>
+    <div class="card bg-yellow">
+        <div class="worksheet-header">wellspring | 2nd grade Arabic HW</div>
+        <p class="question-text">1. Copy the following words twice</p>
+        <div class="copy-row">
+            <div class="copy-item">
+                <span class="big-emoji">🚪</span> Door
+            </div>
+            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">بَابٌ</div>
+            <div class="copy-boxes">
+                <div class="write-box"></div>
+                <div class="write-box"></div>
+            </div>
+        </div>
+        <div class="copy-row">
+            <div class="copy-item">
+                <span class="big-emoji">🏠</span> House
+            </div>
+            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">بَيْتٌ</div>
+            <div class="copy-boxes">
+                <div class="write-box"></div>
+                <div class="write-box"></div>
+            </div>
+        </div>
+        <div class="copy-row">
+            <div class="copy-item">
+                <img src="icons/Cupboard.png" alt="Cupboard" style="width: 60px; height: 60px; margin-right: 15px; vertical-align: middle;">
+                Cupboard
+            </div>
+            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">خِزَانَةٌ</div>
+            <div class="copy-boxes">
+                <div class="write-box"></div>
+                <div class="write-box"></div>
+            </div>
+        </div>
+        <div class="copy-row">
+            <div class="copy-item">
+                <img src="icons/Washing Machine.png" alt="Washing Machine" style="width: 60px; height: 60px; margin-right: 15px; vertical-align: middle;">
+                Washing Machine
+            </div>
+            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">غَسَّالَةٌ</div>
+            <div class="copy-boxes">
+                <div class="write-box"></div>
+                <div class="write-box"></div>
+            </div>
+        </div>
+        <div class="copy-row">
+            <div class="copy-item">
+                <span class="big-emoji">🔒</span> Lock
+            </div>
+            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">قُفْلٌ</div>
+            <div class="copy-boxes">
+                <div class="write-box"></div>
+                <div class="write-box"></div>
+            </div>
+        </div>
+        <div class="copy-row">
+            <div class="copy-item">
+                <span class="big-emoji">📻</span> Radio
+            </div>
+            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">مِذْيَاعٌ</div>
+            <div class="copy-boxes">
+                <div class="write-box"></div>
+                <div class="write-box"></div>
+            </div>
+        </div>
+        <div class="copy-row">
+            <div class="copy-item">
+                <span class="big-emoji">🕯️</span> Candle
+            </div>
+            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">شَمْعَةٌ</div>
+            <div class="copy-boxes">
+                <div class="write-box"></div>
+                <div class="write-box"></div>
+            </div>
+        </div>
+        <div class="copy-row">
+            <div class="copy-item">
+                <span class="big-emoji">☎️</span> Telephone
+            </div>
+            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">هَاتِفٌ</div>
+            <div class="copy-boxes">
+                <div class="write-box"></div>
+                <div class="write-box"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 14: MATCH THE PICTURE -->
+    <h2>1️⃣4️⃣ Match the Picture</h2>
+    <div class="card bg-lime">
+        <p class="question-text">4. Match the picture with the words</p>
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <span class="big-emoji">☎️</span> Telephone
+                <details>
+                    <summary>Match Word!</summary>
+                    <div class="arabic-text">هَاتِفٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">📻</span> Radio
+                <details>
+                    <summary>Match Word!</summary>
+                    <div class="arabic-text">مِذْيَاعٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🏠</span> House
+                <details>
+                    <summary>Match Word!</summary>
+                    <div class="arabic-text">بَيْتٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <img src="icons/Cupboard.png" alt="Cupboard" style="width: 80px; height: 80px; margin-bottom: 10px;">
+                Cupboard
+                <details>
+                    <summary>Match Word!</summary>
+                    <div class="arabic-text">خِزَانَةٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🕯️</span> Candle
+                <details>
+                    <summary>Match Word!</summary>
+                    <div class="arabic-text">شَمْعَةٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <img src="icons/Washing Machine.png" alt="Washing Machine" style="width: 80px; height: 80px; margin-bottom: 10px;">
+                Washing Machine
+                <details>
+                    <summary>Match Word!</summary>
+                    <div class="arabic-text">غَسَّالَةٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🔒</span> Lock
+                <details>
+                    <summary>Match Word!</summary>
+                    <div class="arabic-text">قُفْلٌ</div>
+                </details>
+            </div>
+            <div class="vocab-card">
+                <span class="big-emoji">🚪</span> Door
+                <details>
+                    <summary>Match Word!</summary>
+                    <div class="arabic-text">بَابٌ</div>
+                </details>
+            </div>
+        </div>
     </div>
 
 </div>
