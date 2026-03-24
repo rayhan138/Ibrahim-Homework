@@ -276,6 +276,11 @@
             margin-bottom: 10px;
         }
 
+        .vocab-label .big-emoji {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
         .worksheet-header {
             font-size: 1.4rem;
             font-weight: 700;
@@ -305,6 +310,12 @@
             gap: 15px;
             font-size: 1.5rem;
             font-weight: bold;
+        }
+
+        .arabic-word {
+            font-family: Arial, sans-serif;
+            font-size: 3rem;
+            margin-right: 20px;
         }
 
         .copy-boxes {
@@ -356,6 +367,11 @@
                 padding: 12px 20px;
             }
 
+            .equation {
+                font-size: 2.2rem;
+                padding: 12px;
+            }
+
             .vocab-card .big-emoji {
                 font-size: 4rem;
             }
@@ -387,6 +403,61 @@
             .vocab-grid {
                 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
                 gap: 15px;
+            }
+
+            .worksheet-header {
+                font-size: 1.2rem;
+            }
+
+            .copy-row {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 20px;
+            }
+
+            .copy-item {
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+
+            .arabic-word {
+                font-size: 2.5rem;
+                margin-right: 15px;
+            }
+
+            .copy-boxes {
+                gap: 15px;
+                margin-top: 10px;
+            }
+
+            .write-box {
+                width: 120px;
+                height: 60px;
+            }
+
+            .vocab-label {
+                font-size: 1.3rem;
+            }
+
+            .vocab-label .big-emoji {
+                font-size: 1.8rem;
+                margin-right: 12px;
+            }
+
+            /* Make image icons responsive for tablet */
+            .vocab-label img {
+                width: 50px !important;
+                height: 50px !important;
+            }
+
+            .vocab-card img {
+                width: 65px !important;
+                height: 65px !important;
+            }
+
+            .copy-item img {
+                width: 50px !important;
+                height: 50px !important;
             }
         }
 
@@ -433,6 +504,12 @@
                 padding: 10px 15px;
                 border: 3px solid #000;
                 box-shadow: 3px 3px 0px #000;
+            }
+
+            .equation {
+                font-size: 1.8rem;
+                padding: 10px;
+                border: 3px dashed #000;
             }
 
             .vocab-card {
@@ -497,6 +574,57 @@
             .sort-column h3 {
                 font-size: 1.2rem;
                 border-bottom: 3px solid #000;
+            }
+
+            .worksheet-header {
+                font-size: 1rem;
+                border-bottom: 2px dashed #000;
+            }
+
+            .copy-row {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px 15px;
+                border: 3px solid #000;
+                box-shadow: 4px 4px 0px #000;
+                margin-bottom: 15px;
+            }
+
+            .copy-item {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+                gap: 10px;
+            }
+
+            .arabic-word {
+                font-size: 1.8rem;
+                margin-right: 10px;
+            }
+
+            .copy-boxes {
+                gap: 10px;
+                margin-top: 10px;
+                flex-wrap: wrap;
+            }
+
+            .write-box {
+                width: 100px;
+                height: 50px;
+                border: 2px dashed #888;
+            }
+
+            .vocab-label {
+                font-size: 1.1rem;
+            }
+
+            .vocab-label .big-emoji {
+                font-size: 1.5rem;
+                margin-right: 10px;
+            }
+
+            .flex-row {
+                margin-bottom: 20px;
+                padding-bottom: 12px;
             }
 
             /* Make SVG table responsive */
@@ -868,11 +996,11 @@
                 
                 <div class="flex-row">
                     <div class="vocab-label">
-                        <span class="big-emoji" style="font-size: 2rem;">⬛</span> Blackboard
+                        <span class="big-emoji">⬛</span> Blackboard
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">سَبُّورَةٌ</div>
+                        <div class="arabic-text">سَبُّورَةٌ</div>
                     </details>
                 </div>
 
@@ -883,7 +1011,7 @@
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">طَاوِلَةٌ</div>
+                        <div class="arabic-text">طَاوِلَةٌ</div>
                     </details>
                 </div>
 
@@ -894,7 +1022,7 @@
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">دَبَّاسَةٌ</div>
+                        <div class="arabic-text">دَبَّاسَةٌ</div>
                     </details>
                 </div>
 
@@ -905,26 +1033,26 @@
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">بَرَّايَةٌ</div>
+                        <div class="arabic-text">بَرَّايَةٌ</div>
                     </details>
                 </div>
 
                 <div class="flex-row">
                     <div class="vocab-label">
-                        <span class="big-emoji" style="font-size: 2rem;">🧼</span> Eraser
+                        <span class="big-emoji">🧼</span> Eraser
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">مِمْحَاةٌ</div>
+                        <div class="arabic-text">مِمْحَاةٌ</div>
                     </details>
                 </div>
 
                 <div class="flex-row">
                     <div class="vocab-label">
-                        <span class="big-emoji" style="font-size: 2rem;">📏</span> Ruler</div>
+                        <span class="big-emoji">📏</span> Ruler</div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">مِسْطَرَةٌ</div>
+                        <div class="arabic-text">مِسْطَرَةٌ</div>
                     </details>
                 </div>
             </div>
@@ -935,61 +1063,61 @@
                 
                 <div class="flex-row">
                     <div class="vocab-label">
-                        <span class="big-emoji" style="font-size: 2rem;">📖</span> Book
+                        <span class="big-emoji">📖</span> Book
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">كِتَابٌ</div>
+                        <div class="arabic-text">كِتَابٌ</div>
                     </details>
                 </div>
 
                 <div class="flex-row">
                     <div class="vocab-label">
-                        <span class="big-emoji" style="font-size: 2rem;">📓</span> Exercise Book
+                        <span class="big-emoji">📓</span> Exercise Book
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">دَفْتَرٌ</div>
+                        <div class="arabic-text">دَفْتَرٌ</div>
                     </details>
                 </div>
 
                 <div class="flex-row">
                     <div class="vocab-label">
-                        <span class="big-emoji" style="font-size: 2rem;">🖊️</span> Pen
+                        <span class="big-emoji">🖊️</span> Pen
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">قَلَمٌ</div>
+                        <div class="arabic-text">قَلَمٌ</div>
                     </details>
                 </div>
 
                 <div class="flex-row">
                     <div class="vocab-label">
-                        <span class="big-emoji" style="font-size: 2rem;">🗄️</span> Desk
+                        <span class="big-emoji">🗄️</span> Desk
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">مَكْتَبٌ</div>
+                        <div class="arabic-text">مَكْتَبٌ</div>
                     </details>
                 </div>
 
                 <div class="flex-row">
                     <div class="vocab-label">
-                        <span class="big-emoji" style="font-size: 2rem;">🪑</span> Chair
+                        <span class="big-emoji">🪑</span> Chair
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">كُرْسِيٌّ</div>
+                        <div class="arabic-text">كُرْسِيٌّ</div>
                     </details>
                 </div>
 
                 <div class="flex-row">
                     <div class="vocab-label">
-                        <span class="big-emoji" style="font-size: 2rem;">📦</span> Box
+                        <span class="big-emoji">📦</span> Box
                     </div>
                     <details>
                         <summary style="font-size: 0.9rem; padding: 5px 10px;">Reveal</summary>
-                        <div class="arabic-text" style="font-size: 2.5rem; padding: 5px;">صُنْدُوقٌ</div>
+                        <div class="arabic-text">صُنْدُوقٌ</div>
                     </details>
                 </div>
             </div>
@@ -1182,7 +1310,7 @@
             <div class="copy-item">
                 <span class="big-emoji">🚪</span> Door
             </div>
-            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">بَابٌ</div>
+            <div class="copy-item arabic-word">بَابٌ</div>
             <div class="copy-boxes">
                 <div class="write-box"></div>
                 <div class="write-box"></div>
@@ -1192,7 +1320,7 @@
             <div class="copy-item">
                 <span class="big-emoji">🏠</span> House
             </div>
-            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">بَيْتٌ</div>
+            <div class="copy-item arabic-word">بَيْتٌ</div>
             <div class="copy-boxes">
                 <div class="write-box"></div>
                 <div class="write-box"></div>
@@ -1203,7 +1331,7 @@
                 <img src="icons/Cupboard.png" alt="Cupboard" style="width: 60px; height: 60px; margin-right: 15px; vertical-align: middle;">
                 Cupboard
             </div>
-            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">خِزَانَةٌ</div>
+            <div class="copy-item arabic-word">خِزَانَةٌ</div>
             <div class="copy-boxes">
                 <div class="write-box"></div>
                 <div class="write-box"></div>
@@ -1214,7 +1342,7 @@
                 <img src="icons/Washing Machine.png" alt="Washing Machine" style="width: 60px; height: 60px; margin-right: 15px; vertical-align: middle;">
                 Washing Machine
             </div>
-            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">غَسَّالَةٌ</div>
+            <div class="copy-item arabic-word">غَسَّالَةٌ</div>
             <div class="copy-boxes">
                 <div class="write-box"></div>
                 <div class="write-box"></div>
@@ -1224,7 +1352,7 @@
             <div class="copy-item">
                 <span class="big-emoji">🔒</span> Lock
             </div>
-            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">قُفْلٌ</div>
+            <div class="copy-item arabic-word">قُفْلٌ</div>
             <div class="copy-boxes">
                 <div class="write-box"></div>
                 <div class="write-box"></div>
@@ -1234,7 +1362,7 @@
             <div class="copy-item">
                 <span class="big-emoji">📻</span> Radio
             </div>
-            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">مِذْيَاعٌ</div>
+            <div class="copy-item arabic-word">مِذْيَاعٌ</div>
             <div class="copy-boxes">
                 <div class="write-box"></div>
                 <div class="write-box"></div>
@@ -1244,7 +1372,7 @@
             <div class="copy-item">
                 <span class="big-emoji">🕯️</span> Candle
             </div>
-            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">شَمْعَةٌ</div>
+            <div class="copy-item arabic-word">شَمْعَةٌ</div>
             <div class="copy-boxes">
                 <div class="write-box"></div>
                 <div class="write-box"></div>
@@ -1254,7 +1382,7 @@
             <div class="copy-item">
                 <span class="big-emoji">☎️</span> Telephone
             </div>
-            <div class="copy-item" style="font-family: Arial; font-size: 3rem; margin-right: 20px;">هَاتِفٌ</div>
+            <div class="copy-item arabic-word">هَاتِفٌ</div>
             <div class="copy-boxes">
                 <div class="write-box"></div>
                 <div class="write-box"></div>
